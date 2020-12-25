@@ -10,7 +10,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Offset> points;
+  List<Offset> points = [];
   Color selectedColor;
   double strokeWidth;
 

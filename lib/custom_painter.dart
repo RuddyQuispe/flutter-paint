@@ -16,11 +16,11 @@ class MyCustomPainter extends CustomPainter {
     Rect rect = Rect.fromLTWH(0, 0, size.width, size.height);
     canvas.drawRect(rect, background);
     Paint paint = Paint();
-    paint.color = Colors.black;
-    paint.strokeWidth = 2.0;
+    paint.color = this.color;
+    paint.strokeWidth = this.stroke;
     paint.isAntiAlias = true;
     paint.strokeCap = StrokeCap.round;
-    for (var i = 0; i < points.length - 1; i++) {
+    for (int i = 0; i < (points.length - 1); i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i], points[i + 1], paint);
       } else if (points[i] != null && points[i + 1] != null) {
@@ -31,6 +31,7 @@ class MyCustomPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    throw UnimplementedError();
+    //throw UnimplementedError();
+    return true;
   }
 }
